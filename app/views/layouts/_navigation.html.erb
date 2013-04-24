@@ -1,0 +1,23 @@
+<%= link_to "ingresar", root_path, :class => 'brand' %>
+<ul class="nav">
+<!-- if user_signed_in? %> -->
+<li>
+</li>
+<li>
+<%= link_to('cursos', cursos_path) %>
+</li>
+<!-- else %> -->
+<li>
+<%= link_to('horarios', horarios_path) %>
+</li>
+<!-- end %> -->
+<!-- if user_signed_in? %> -->
+<li>
+<%= link_to('instructores', instructores_path) %>
+</li>
+<!-- else %> -->
+<li>
+<%= link_to('materias', materias_path) %>
+</li>
+<!-- end %> -->
+</ul>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="login/index.html">INGRESAR </a>
+                <ul class="nav">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Terminos</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Publicidad</a></li>
+                <li><a href="#">Empleos</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                </ul>
+                <p></p>
+                
+                
+            </div>
+        </div>
+    <div class="span6 offset3">
+        <div class="hero-unit">
+            <h1><center>Bienvenidos</center></h1>
+            <left><%=image_tag('Bienvenidos.jpg', :alt => '', :class => "img-rounded" ) %><left>
+            <p><center>Capacitaciones</center></p>
+        </div>
+  </body>
+</html>
