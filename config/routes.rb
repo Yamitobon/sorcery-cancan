@@ -1,10 +1,18 @@
 Experimento1::Application.routes.draw do
+  
   get "login/index"
 
   get "home/index"
 
   resources :horarios
 
+ get "logout" => "sessions#destroy", :as => "logout"
+ get "login" => "sessions#new", :as => "login"
+ get "signup" => "users#new", :as => "signup"
+ resources :users
+ resources :sessions
+ 
+ root :to => "home#index"
 
   #resources :estudiantes
 
@@ -69,7 +77,7 @@ Experimento1::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#index'
+   #root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

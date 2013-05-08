@@ -1,7 +1,10 @@
 class CursosController < ApplicationController
- helper_method :sort_column, :sort_direction
- before_filter :find_cursos, :except => [ :index, :create, :new]
 
+  before_filter :require_login
+  load_and_authorize_resource :only => [:new, :edit, :destroy]
+ 
+ before_filter :find_curso, :except => [ :index, :create, :new]
+ helper_method :sort_column, :sort_direction
   def index
     @regpag = (params[:numreg])? params[:numreg].to_i : 5
       if ((@regpag)==0) or ((@regpag) < 0) then
@@ -31,6 +34,7 @@ class CursosController < ApplicationController
 
   def create
     @curso = Curso.new(params[:curso])
+    @cursos = Curso.all
     render :action => :new unless @curso.save
     
   end
@@ -42,7 +46,7 @@ class CursosController < ApplicationController
   end
 
   def destroy
-    #@curso = Curso.find(params[:id])
+    @cursos = Curso.all
     @curso.destroy
   end
 
